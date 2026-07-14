@@ -1,22 +1,22 @@
 Proceso tablas_multiplicar
-//Definición
+	//Definición
 	definir n1, n2, res, resr como entero;
 	
-//Asignación
+	//Asignación (+1 para mover el rango de datos y no tener el 0 incluido)
 	n1<- Azar(9);
 	n2<- Azar(9);
 	
-//Impresión en pantalla
+	//Impresión en pantalla
 	Escribir "Practica tablas de multiplicar";
 	escribir "Cuanto es " n1 " * " n2;
 	
-//Variable introducida
+	//Variable introducida
 	leer res;
 	
-//Variable compuesta
+	//Variable compuesta
 	resr <- (n1*n2);
 	
-//Proceso
+	//Proceso
 	si res = resr 
 		escribir "Correcto es igual a " resr;
 	SiNo
