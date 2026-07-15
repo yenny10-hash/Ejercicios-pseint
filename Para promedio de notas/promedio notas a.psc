@@ -1,4 +1,4 @@
-Proceso Calculo
+Proceso promedioDeNotas
 	
 //Definición de datos
 	definir apes, nom, id Como Caracter;
@@ -6,25 +6,18 @@ Proceso Calculo
 	
 //Ingreso de variables
 	Escribir Sin Saltar "Calculo de notas finales--->";
-	
 	Escribir "Ingrese su identificación";
 	leer id;
-	
 	Escribir sin saltar "Ingrese sus nombres";
 	Leer nom;
-	
 	Escribir Sin Saltar "Ingrese sus apellidos";
 	leer apes;
-	
 	Escribir sin saltar "ingrese su primer nota";
 	leer not1; 
-	
 	escribir sin saltar "ingrese su segunda nota";
 	leer not2;
-	
 	escribir sin saltar "ingrese su tercer nota";
 	leer not3; 
-	
 	Escribir Sin Saltar "ingrese la nota del examen final";
 	leer exf;
 	
