@@ -1,14 +1,18 @@
+SubProceso espacio(p)
+	Escribir p;
+	Escribir "------------------------------------";
+Fin SubProceso
+
 Proceso notasDecimal1
 	
 	//Definición de datos
 	definir apes, nom, id Como Caracter;
-	Definir not1, not2, not3, exf, Promedio como real; //operación inicial
+	Definir not1, not2, not3, exf, Promedio como real;//operación inicial
 	definir promediot, prom como real; //opercion para ceparar 1
     definir pt, pm como real;
 	Definir pt1,pm1 Como Real;
 	definir pt2, pm2 como real;
 	Definir a, b, c, d Como Caracter;
-	
 	
 	//Ingreso de variables
 	Escribir Sin Saltar "Calculo de notas finales--->";
@@ -29,9 +33,12 @@ Proceso notasDecimal1
 	
 	//Calculo
 	Promedio <- (not1 + not2 + not3 + exf)/4;
+	espacio ( "ImpresionDatos" );
+	
 	//Impreción de datos	
 	escribir "Notas de ",id, " " nom," " apes;
 	escribir "Listado de datos ingresados nota 1: ",not1, " nota 2: " not2 " nota 3: ", not3 " Examen final: " exf;
+	espacio ("Datos");
 	
 	//Control de datos de entrada
 	si promedio > 5.0;
@@ -39,7 +46,7 @@ Proceso notasDecimal1
 		promedio<-0;
 	FinSi
 	
-	//Condición de acuerdo a promedio (Variable)
+	//Condición de acuerdo a promedio
 	si Promedio >0 y Promedio <3.6 entonces;
 		escribir "su promedio es inaceptable";
 	SiNo
@@ -55,16 +62,10 @@ Proceso notasDecimal1
 	//operación1
 	promediot<-trunc(promedio);
 	
-	si promediot=0
-		prom<-promedio*10;
-		escribir " trunco ", promediot;
-		escribir "Decimales  ", prom;
-		
+	si promediot=0 //numero etero
+		prom<-promedio*10;//decimales
 	sino
-		prom<-(promedio-promediot)*10;
-		escribir " trunco ", promediot;
-		escribir "Decimales  ", prom;
-		
+		prom<-(promedio-promediot)*10;//decimales con numero diferemte a 0
 	FinSi
 	
 	Segun promediot Hacer
@@ -95,14 +96,8 @@ Proceso notasDecimal1
 	
 	si pt=0
 		pm<-prom*10; //Corrección
-		escribir " trunco ", pt;
-		escribir "Decimales  ", pm;
-		
 	sino
 		pm<-(prom-pt)*10;
-		escribir " trunco ", pt;
-		escribir "Decimales  ", pm;
-		
 	FinSi
 	
 	Segun pt Hacer
@@ -133,14 +128,8 @@ Proceso notasDecimal1
 	
 	si pt1=0
 		pm1<-pm*10;
-		escribir " trunco ", pt1;
-		escribir "Decimales  ", pm1;
-		
 	sino
 		pm1<-(pm-pt1)*10;
-		escribir " trunco ", pt1;
-		escribir "Decimales  ", pm1;
-		
 	FinSi
 	
 	segun pt1 Hacer
@@ -171,15 +160,10 @@ Proceso notasDecimal1
 	
 	si pt2=0
 		pm2<-pm1*10;
-		escribir " trunco ", pt2;
-		escribir "Decimales  ", pm2;
-		
 	sino
 		pm2<-(pm1-pt2)*10;
-		escribir " trunco ", pt2;
-		escribir "Decimales  ", pm2;
 	FinSi
-
+	
 	segun pt2 Hacer
 		1:
 			d<- "Uno ";
@@ -203,6 +187,7 @@ Proceso notasDecimal1
 			d<- "zero ";
 	Fin Segun
 	
+	espacio ("Final"); //Impresión de resultados
 	escribir "Promedio: " Promedio;
 	escribir a, b, c, d;
 	
