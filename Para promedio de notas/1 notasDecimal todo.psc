@@ -1,21 +1,23 @@
-SubProceso espacio(p)
-	Escribir p;
+SubProceso espacio
 	Escribir "------------------------------------";
 Fin SubProceso
+
 
 Proceso notasDecimal1
 	
 	//Definición de datos
 	definir apes, nom, id Como Caracter;
-	Definir not1, not2, not3, exf, Promedio como real;//operación inicial
-	definir promediot, prom como real; //opercion para ceparar 1
+	Definir not1, not2, not3, exf, Promedio como real;
+	definir promediot, prom como real;
     definir pt, pm como real;
 	Definir pt1,pm1 Como Real;
 	definir pt2, pm2 como real;
-	Definir a, b, c, d Como Caracter;
+	Definir a, b, c, d, co Como Caracter;
 	
-	//Ingreso de variables
-	Escribir Sin Saltar "Calculo de notas finales--->";
+	//Ingreso de datos
+	espacio;
+	Escribir "Calculo de notas finales";
+	espacio;
 	Escribir "Ingrese su identificación";
 	leer id;
 	Escribir sin saltar "Ingrese sus nombres";
@@ -33,136 +35,121 @@ Proceso notasDecimal1
 	
 	//Calculo
 	Promedio <- (not1 + not2 + not3 + exf)/4;
-	espacio ( "ImpresionDatos" );
+	espacio;
 	
 	//Impreción de datos	
 	escribir "Notas de ",id, " " nom," " apes;
 	escribir "Listado de datos ingresados nota 1: ",not1, " nota 2: " not2 " nota 3: ", not3 " Examen final: " exf;
-	espacio ("Datos");
+	espacio;
 	
-	//Control de datos de entrada
+	//Control de datos de entrada en Promedio
 	si promedio > 5.0;
 		Escribir "Error de datos";
 		promedio<-0;
 	FinSi
 	
-	//Condición de acuerdo a promedio
 	si Promedio >0 y Promedio <3.6 entonces;
 		escribir "su promedio es inaceptable";
-	SiNo
-		si Promedio >3.5 y promedio <4.0
-			Escribir "Su promedio es regular";
-		sino
-			si promedio >=4.0
-				Escribir "su promdio es bueno";
-			FinSi
-		FinSi
+	FinSi
+	
+	si Promedio >3.5 y promedio <4.0
+		Escribir "Su promedio es regular";
+	FinSi
+	
+	si promedio >=4.0
+		Escribir "su promdio es bueno";
 	FinSi
 	
 	//operación1
 	promediot<-trunc(promedio);
-	
-	si promediot=0 //numero etero
-		prom<-promedio*10;//decimales
-	sino
-		prom<-(promedio-promediot)*10;//decimales con numero diferemte a 0
-	FinSi
+	prom<-(promedio-promediot)*10;
 	
 	Segun promediot Hacer
 		1:
-			a<- "Uno coma ";
+			a<- "Uno ";
 		2:
-			a<- "Dos coma ";
+			a<- "Dos ";
 		3:
-			a<- "Tres coma ";
+			a<- "Tres ";
 		4:
-			a<- "Cuatro coma ";
+			a<- "Cuatro ";
 		5:
-			a<- "Cinco coma ";
+			a<- "Cinco ";
 		6:
-			a<- "Seis coma ";
+			a<- "Seis ";
 		7:
-			a<- "Siete coma ";
+			a<- "Siete ";
 		8:
-			a<- "Ocho coma ";
+			a<- "Ocho ";
 		9:
-			a<- "Nueve coma ";
+			a<- "Nueve ";
+		0:
+			a<-"Zero ";
 		De Otro Modo:
-			a<- "zero coma ";
+			a<- ". ";
 	Fin Segun
+	
+	co<- " coma ";
 	
 	//operacion 2
 	pt<-trunc(prom);
-	
-	si pt=0
-		pm<-prom*10; //Corrección
-	sino
-		pm<-(prom-pt)*10;
-	FinSi
+	pm<-(prom-pt)*10;
 	
 	Segun pt Hacer
 		1:
-			b<- "Uno ";
+			b<- "uno ";
 		2:
-			b<- "Dos ";
+			b<- "dos ";
 		3:
-			b<- "Tres ";
+			b<- "tres ";
 		4:
-			b<- "Cuatro ";
+			b<- "cuatro ";
 		5:
-			b<- "Cinco ";
+			b<- "cinco ";
 		6:
-			b<- "Seis ";
+			b<- "seis ";
 		7:
-			b<- "Siete ";
+			b<- "siete ";
 		8:
-			b<- "Ocho ";
+			b<- "ocho ";
 		9:
-			b<- "Nueve ";
-		De Otro Modo:
+			b<- "nueve ";
+		0:
 			b<- "zero ";
+		De Otro Modo:
+			b<- ". ";
 	Fin Segun
 	
 	//operación3
 	pt1<-trunc(pm);
-	
-	si pt1=0
-		pm1<-pm*10;
-	sino
-		pm1<-(pm-pt1)*10;
-	FinSi
+    pm1<-(pm-pt1)*10;
 	
 	segun pt1 Hacer
 		1:
-			c<- "Uno ";
+			c<- "uno ";
 		2:
-			c<- "Dos ";
+			c<- "dos ";
 		3:
-			c<- "Tres ";
+			c<- "tres ";
 		4:
-			c<- "Cuatro ";
+			c<- "cuatro ";
 		5:
-			c<- "Cinco ";
+			c<- "cinco ";
 		6:
-			c<- "Seis ";
+			c<- "seis ";
 		7:
-			c<- "Siete ";
+			c<- "siete ";
 		8:
-			c<- "Ocho ";
-		9:
-			c<- "Nueve ";
+			c<- "ocho ";
+		0:
+			c<-"zero ";
 		De Otro Modo:
-			c<- "zero ";
+			c<- ". ";
 	Fin Segun
 	
 	//operación4
 	pt2<-trunc(pm1);
-	
-	si pt2=0
-		pm2<-pm1*10;
-	sino
-		pm2<-(pm1-pt2)*10;
-	FinSi
+	pm2<-(pm1-pt2)*10;
 	
 	segun pt2 Hacer
 		1:
@@ -183,12 +170,26 @@ Proceso notasDecimal1
 			d<- "Ocho ";
 		9:
 			d<- "Nueve ";
+		0:
+			d<-"zero ";
 		De Otro Modo:
-			d<- "zero ";
+			d<- ". ";
 	Fin Segun
 	
-	espacio ("Final"); //Impresión de resultados
-	escribir "Promedio: " Promedio;
-	escribir a, b, c, d;
+	espacio; //Impresión de resultados
+	escribir Sin Saltar "Promedio real: " Promedio;
+	escribir " " a, co, b, c, d;
+	
+	promedio<-((promedio*1000)-pt2)/1000;
+	Escribir sin saltar "-uno ",promedio;
+	escribir " ",a, co, b, c;
+	
+	promedio<-((promedio*100)-pt1)/100;
+	Escribir sin saltar "-uno ",promedio;
+	escribir " ",a, co, b;
+	
+	promedio<-((promedio*10)-pt)/10;
+	Escribir sin saltar "-uno ",promedio;
+	escribir " ", a;
 	
 FinProceso
