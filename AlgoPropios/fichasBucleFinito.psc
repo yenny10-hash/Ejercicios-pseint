@@ -47,10 +47,10 @@ Proceso fichasBuclefinito
 				SiNo
 					Repetir
 						ficha<-ficha-128;
-						escribir "Fichas extra: ", ficha;
 						hoja<- hoja +1;
-						Escribir "No.Hojas: " hoja;
 					Hasta Que ficha<=128
+					Escribir "No.Hojas: " hoja;
+					escribir "Fichas extra: ", ficha;
 					
 					escribir"Color número: ", "[",i+1,"]";
 					op<- ficha /4;
@@ -74,10 +74,10 @@ Proceso fichasBuclefinito
 				SiNo
 					Repetir
 						ficha<-ficha-64;
-						escribir "Fichas extra: ", ficha;
 						hoja<- hoja +1;
-						Escribir "No.Hojas: " hoja; 
 					Hasta Que ficha<=64
+					Escribir "No.Hojas: " hoja;
+					escribir "Fichas extra: ", ficha;
 					
 					escribir"Color número: ", "[",i+1,"]";
 					op<- ficha /2;
@@ -100,10 +100,10 @@ Proceso fichasBuclefinito
 				SiNo
 					Repetir
 						ficha<-ficha-32;
-						escribir "Fichas extra: ", ficha;
 						hoja<- hoja +1;
-						Escribir "No.Hojas: " hoja;
 					Hasta Que ficha<=32
+					Escribir "No.Hojas: " hoja;
+					escribir "Fichas extra: ", ficha;
 					
 					escribir"Color número: ", "[",i+1,"]";
 					ficha<- (hoja*32)+ficha;
