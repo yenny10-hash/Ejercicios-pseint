@@ -7,6 +7,7 @@ Proceso fichasBuclefinito
 	
 //Definición
 	Definir num, i, ficha, tamano, hoja Como Entero;
+	definir col Como Caracter;
 	definir op como real;
 	
 //Título
@@ -20,6 +21,8 @@ Proceso fichasBuclefinito
 	
 //ciclo
 	Mientras i<>num Hacer
+		escribir "Ingrese el nombre color";
+		leer col;// color de las fichas
 		escribir "Ingrese el número de fichas por un color";
 		leer ficha;
 		
@@ -36,12 +39,11 @@ Proceso fichasBuclefinito
 			1:
 				Escribir"----Tamaño 1/128 ----"; 
 				si ficha<128
-					escribir"Color número: ", "[",i+1,"]";//+1 Corrige error visal del 0
+					escribir"Color ", col, " número: ", "[",i+1,"]";//+1 Corrige error visal del 0
 					Escribir "Necesitas menos de una hoja";
 					escribir "Para: ",ficha;
 					op<- ficha /4;
-					Escribir "Conversión a tamaño 1/32 fichas: ", op ;
-					Escribir "";
+					Escribir "Conversión de ", ficha " a tamaño 1/32 fichas: ", op ;
 					i<-i+1;
 					espacio;
 				SiNo
@@ -52,7 +54,7 @@ Proceso fichasBuclefinito
 					Escribir "No.Hojas: " hoja;
 					escribir "Fichas extra: ", ficha;
 					
-					escribir"Color número: ", "[",i+1,"]";
+					escribir"Color ", col, " número: ", "[",i+1,"]";
 					op<- ficha /4;
 					Escribir "Conversión a tamaño 1/32 fichas: ", op ;
 					ficha<- (hoja*128)+ficha;// (número de restas * tamaño) + sobrante
@@ -64,7 +66,7 @@ Proceso fichasBuclefinito
 			2:
 				Escribir"----Tamaño 1/64 ----"; 
 				si ficha<64
-					escribir"Color número: ", "[",i+1,"]";
+					escribir"Color ", col, " número: ", "[",i+1,"]";
 					Escribir "Necesitas menos de una hoja";
 					escribir "Para: ",ficha;
 					op<- ficha /2;
@@ -79,7 +81,7 @@ Proceso fichasBuclefinito
 					Escribir "No.Hojas: " hoja;
 					escribir "Fichas extra: ", ficha;
 					
-					escribir"Color número: ", "[",i+1,"]";
+					escribir"Color ", col, " número: ", "[",i+1,"]";
 					op<- ficha /2;
 					Escribir "Conversión de ", ficha " a tamaño 1/32 fichas: ", op ;
 					ficha<- (hoja*64)+ficha;
@@ -92,7 +94,7 @@ Proceso fichasBuclefinito
 			3:
 				Escribir"----Tamaño 1/32 ----"; 
 				si ficha<=32
-					escribir"Color número: ", "[",i+1,"]";
+					escribir"Color ", col, " número: ", "[",i+1,"]";
 					Escribir "Necesitas menos de una hoja";
 					escribir "Para: ",ficha;
 					i<-i+1;
@@ -105,7 +107,7 @@ Proceso fichasBuclefinito
 					Escribir "No.Hojas: " hoja;
 					escribir "Fichas extra: ", ficha;
 					
-					escribir"Color número: ", "[",i+1,"]";
+					escribir"Color ", col, " número: ", "[",i+1,"]";
 					ficha<- (hoja*32)+ficha;
 					espacio;
 					Escribir "Para ", ficha " de tamaño 1/32";
