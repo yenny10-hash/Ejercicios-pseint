@@ -1,5 +1,6 @@
 SubProceso espacio
 	Escribir "---------------";
+//hoja extra por sobrate
 	
 Fin SubProceso
 
@@ -116,7 +117,7 @@ Proceso fichasBuclefinito
 				FinSi
 				
 			De Otro Modo:
-				escribir"Color número: ", "[",i+1,"]";
+				escribir"Color, ",col," número: ", "[",i+1,"]";
 				Escribir "Opción inexistente (*-*) "; //Error que no suma a los colores
 				espacio;
 		FinSegun
